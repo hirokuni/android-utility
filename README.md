@@ -11,3 +11,10 @@ License
 -------
 
 Apache License, Version 2.0
+
+
+How to make maven output
+-------
+# go to root dir
+# ./gradlew uploadArchives
+# It is successful if repository directory contain some files including pom file etc.
