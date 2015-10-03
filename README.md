@@ -15,6 +15,7 @@ Apache License, Version 2.0
 
 How to make maven output
 -------
-# go to root dir
-# ./gradlew uploadArchives
-# It is successful if repository directory contain some files including pom file etc.
+
+1. go to root dir
+2. ./gradlew uploadArchives
+3. It is successful if repository directory contain some files including pom file etc.
