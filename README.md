@@ -15,7 +15,10 @@ Apache License, Version 2.0
 
 How to make maven output
 -------
+[Goode example] <https://github.com/TakahikoKawasaki/nv-websocket-client> 
 
 1. go to root dir
 2. ./gradlew uploadArchives
 3. It is successful if repository directory contain some files including pom file etc.
+
+
