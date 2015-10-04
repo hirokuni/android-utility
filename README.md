@@ -24,7 +24,6 @@ How to make maven output
 
 Gradle setting in client application
 -------
-If a client application uses the android-utility lib, the following gradle setting is required.
 
 ```Gradle
 repositories {
