@@ -22,3 +22,17 @@ How to make maven output
 3. It is successful if repository directory contain some files including pom file etc.
 
 
+Gradle setting in client application
+-------
+If a client application uses the android-utility lib, the following gradle setting is required.
+
+```Gradle
+repositories {
+    maven { url 'https://github.com/hirokuni/android-utility/raw/master/repository' }
+}
+dependencies {
+    compile 'jp.hkawasaki:android-util-lib:0.0.1'
+}
+```
+
+
