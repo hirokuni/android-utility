@@ -21,6 +21,9 @@ How to make maven output
 2. ./gradlew uploadArchives
 3. It is successful if repository directory contain some files including pom file etc.
 
+version
+-------
+* 0.0.3 : PCM recording with mic and async task utililty (media package and os package).
 
 Gradle setting in client application
 -------
@@ -34,7 +37,7 @@ dependencies {
 }
 ```
 
-Permission
+Permission in client application
 -------
 ```Permission
   <uses-permission android:name="android.permission.INTERNET" />
