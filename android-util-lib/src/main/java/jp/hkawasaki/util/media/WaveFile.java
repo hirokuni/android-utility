@@ -7,6 +7,8 @@ import java.io.RandomAccessFile;
 
 /**
  * Created by hirokuni on 15/10/01.
+ *
+ * Reference : http://blog.livedoor.jp/sce_info3-craft/archives/8280080.html
  */
 public class WaveFile {
     private final int FILESIZE_SEEK = 4;

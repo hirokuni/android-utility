@@ -7,6 +7,8 @@ import android.os.Environment;
 
 /**
  * Created by hirokuni on 15/09/29.
+ *
+ * Reference : http://blog.livedoor.jp/sce_info3-craft/archives/8280133.html
  */
 public class PcmRecording {
 
