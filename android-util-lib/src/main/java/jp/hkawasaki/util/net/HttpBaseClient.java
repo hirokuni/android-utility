@@ -1,5 +1,5 @@
 
-package jp.hkawasaki.util;
+package jp.hkawasaki.util.net;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

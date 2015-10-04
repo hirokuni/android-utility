@@ -1,4 +1,4 @@
-package jp.hkawasaki.util;
+package jp.hkawasaki.util.net;
 
 import android.util.Log;
 
