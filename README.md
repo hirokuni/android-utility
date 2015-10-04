@@ -34,4 +34,9 @@ dependencies {
 }
 ```
 
-
+Permission
+-------
+'''Permission
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+'''
