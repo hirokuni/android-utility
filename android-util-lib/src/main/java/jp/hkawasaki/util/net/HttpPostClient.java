@@ -1,9 +1,6 @@
 package jp.hkawasaki.util.net;
 
 import android.util.Log;
-
-import org.json.JSONObject;
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,7 +9,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
+import org.json.JSONObject;
 /**
  * Created by 22110115 on 2015/09/10.
  */
