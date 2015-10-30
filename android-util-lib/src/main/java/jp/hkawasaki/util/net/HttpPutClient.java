@@ -1,6 +1,9 @@
 package jp.hkawasaki.util.net;
 
 import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -50,6 +53,32 @@ public class HttpPutClient extends HttpBaseClient {
         //wait here until receiving the result.
         return getStringResBody();
     }
+
+    /*
+ * Put json data with string.
+ */
+    public String execute(File file) throws IOException {
+        resBody = null;
+
+        if (file != null) {
+            OutputStream os = con.getOutputStream();
+            FileInputStream fis = new FileInputStream(file);
+
+            byte[] buf=new byte[4096];
+            int c = 0;
+            while((c = fis.read(buf)) != -1){
+                os.write(buf, 0, c);
+                os.flush();
+            }
+            os.close();
+        } else {
+            return null;
+        }
+
+        //wait here until receiving the result.
+        return getStringResBody();
+    }
+
 
     public String getStringResBody() {
         if (resBody != null)
