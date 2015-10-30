@@ -1,11 +1,11 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        //applicationId "jp.hkawasaki.util"
+        applicationId "jp.hkawasaki.unittestapp"
         minSdkVersion 21
         targetSdkVersion 22
         versionCode 1
@@ -24,21 +24,10 @@ dependencies {
     compile 'com.amazonaws:aws-android-sdk-core:2.+'
     compile 'com.amazonaws:aws-android-sdk-s3:2.+'
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:design:22.2.0'
+    compile project(':android-util-lib')
     androidTestCompile 'com.android.support.test:runner:0.3'
-    androidTestCompile 'com.android.support.test:rules:0.3'
-}
-
-def repo = new File(rootDir, "repository")
-
-apply plugin: 'maven'
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository url: "file://${repo.absolutePath}"
-            pom.version = '0.0.5'
-            pom.groupId = 'jp.hkawasaki'
-            pom.artifactId = 'android-util-lib'
-        }
-    }
+    //androidTestCompile 'com.android.support.test:rules:0.3'
 }

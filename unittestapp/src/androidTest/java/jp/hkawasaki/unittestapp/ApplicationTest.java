@@ -1,4 +1,4 @@
-package jp.hkawasaki.util;
+package jp.hkawasaki.unittestapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

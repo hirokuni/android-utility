@@ -20,6 +20,10 @@ public class FileRW {
     private final static String TAG = FileRW.class.getSimpleName();
     private File mFile;
     private final static int BUF_SIZE = 4096;
+    private BufferedInputStream mBis;
+    //private FileOutputStream mFos;
+    //private BufferedOutputStream mBos;
+    //private FileInputStream mFis;
 
     public FileRW(String filePath) throws IOException {
         mFile = new File(filePath);
@@ -36,6 +40,11 @@ public class FileRW {
             mFile.createNewFile();
             Log.v("HttpTest", "file creation");
         }
+
+        //mFos = new FileOutputStream(mFile);
+        //mBos = new BufferedOutputStream(mFos);
+        //mFis = new FileInputStream(mFile);
+        //mBis = new BufferedInputStream(mFis);
     }
 
     /*
@@ -73,6 +82,7 @@ public class FileRW {
         return wsize;
     }
 
+
     public int read(byte[] data) throws FileNotFoundException {
         FileInputStream fis = new FileInputStream(mFile);
 
@@ -85,7 +95,6 @@ public class FileRW {
             e.printStackTrace();
             return -1;
         }
-
         try {
             bis.close();
             fis.close();
