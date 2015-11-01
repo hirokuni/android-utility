@@ -111,6 +111,7 @@ public class HttpClientTest extends TestCaseBase {
         String uploadTargetFilePath = sTestGRscFile.getAbsolutePath();
         {
             GeneratePresignedUrlAndUploadObject ao = new GeneratePresignedUrlAndUploadObject();
+            ao.setContentType("text/plain");
             URL url = ao.getSignedUrl("PUT");
             Log.i(TAG, "url: " + url);
             HttpPutClient putClient = new HttpPutClient(url);
@@ -140,6 +141,21 @@ public class HttpClientTest extends TestCaseBase {
         }
     }
 
+    @Test
+    public void FailPutDueToIllegalAwsId() throws IOException, JSONException {
+
+        String uploadTargetFilePath = sTestGRscFile.getAbsolutePath();
+        {
+            GeneratePresignedUrlAndUploadObject gpao = new GeneratePresignedUrlAndUploadObject();
+            gpao.setAwsUserId("illegalId");
+            URL url = gpao.getSignedUrl("PUT");
+            HttpPutClient putClient = new HttpPutClient(url);
+            putClient.execute(new File(uploadTargetFilePath), "text/plain");
+
+            //gpao.UploadObject(url);
+            assertEquals(403, putClient.getResponseCode());
+        }
+    }
 
     @AfterClass
     public static void doAfterClass() throws Exception {

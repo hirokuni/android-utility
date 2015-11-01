@@ -1,14 +1,21 @@
 package jp.hkawasaki.util.net;
 
+import android.util.Log;
+
 import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.lang.Override;import java.lang.String;import java.lang.StringBuffer;import java.net.HttpURLConnection;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.StringBuffer;
+import java.net.HttpURLConnection;
 import java.net.URL;
+
 import org.json.JSONObject;
 
 /**
@@ -64,17 +71,25 @@ public class HttpPutClient extends HttpBaseClient {
         if (contentType != null)
             con.setRequestProperty("Content-Type", contentType);
 
+        //con.setChunkedStreamingMode(4096);
+        con.setFixedLengthStreamingMode(file.length());
+
         if (file != null) {
             OutputStream os = con.getOutputStream();
             FileInputStream fis = new FileInputStream(file);
-
-            byte[] buf=new byte[4096];
+            BufferedOutputStream bos = new BufferedOutputStream(os);
+            byte[] buf = new byte[4096];
             int c = 0;
-            while((c = fis.read(buf)) != -1){
-                os.write(buf, 0, c);
-                os.flush();
+
+            while ((c = fis.read(buf)) != -1) {
+                bos.write(buf, 0, c);
+                bos.flush();
             }
-            os.close();
+
+            fis.close();
+
+            bos.flush();
+            bos.close();
         } else {
             return null;
         }

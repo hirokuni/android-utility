@@ -23,6 +23,7 @@ How to make maven output
 
 version
 -------
+* 0.0.7 : Bug fix and add test for put
 * 0.0.6 : Bug fix for the file attachement
 * 0.0.5 : http put with file attachement
 * 0.0.4 : nano http server
