@@ -57,6 +57,7 @@ public class HttpPutClient extends HttpBaseClient {
     /*
  * Put json data with string.
  */
+
     public String execute(File file, String contentType) throws IOException {
         resBody = null;
 
