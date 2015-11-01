@@ -23,6 +23,7 @@ How to make maven output
 
 version
 -------
+* 0.0.6 : Bug fix for the file attachement
 * 0.0.5 : http put with file attachement
 * 0.0.4 : nano http server
 * 0.0.3 : PCM recording with mic and async task utililty (media package and os package).
